@@ -1,0 +1,19 @@
+.box{
+    display: flex;
+    flex-direction: column;
+
+
+    border: 0.1ch solid hotpink;
+    border-radius: 2em;
+    background-color: #7B1B38;
+    color: snow;
+}
+.room{
+    color:aquamarine;
+    font-weight: bold;
+
+}
+h4{
+    color: rgb(121, 5, 5);
+    font-weight: bold;
+}

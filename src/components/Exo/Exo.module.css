@@ -1,0 +1,25 @@
+.number-box {
+    /* display: flex; */
+    display:block;
+    /* flex-direction:row; */
+    margin: 5px auto;
+    /* align-items: center;  */
+    /* justify-content: center; */
+    border: 0.1ch solid hotpink;
+    border-radius: 2em;
+    background-color: #7B1B38;
+    width: 50%;
+    height: 50px;
+} 
+.zero{
+    color: aquamarine;
+    font-weight: bold;
+}
+.pair{
+    color: lightgreen;
+    font-weight: bold;
+}
+.impair{
+    color: lightcoral;
+    font-weight: bold;
+}
