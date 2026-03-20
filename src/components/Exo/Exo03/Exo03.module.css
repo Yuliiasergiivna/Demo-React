@@ -1,0 +1,8 @@
+div{
+        display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;      
+    padding: 20px;
+    list-style-type: none; 
+    justify-content: center;
+}

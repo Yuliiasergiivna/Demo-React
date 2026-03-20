@@ -6,6 +6,7 @@ import PokemonTable from './components/PokemonTable/PokemonTable'
 // import pokemons from './data/pokemon.json'
 import Produits from './components/Exo/Exo02/Produits'
 import produit from './data/produit.json'
+import Exo03 from './components/Exo/Exo03/Exo03'
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
 
      <h4>Exercice 2</h4>
      {<Produits produits={produit}/>}
+
+     <h3>Exercice 3</h3>
+     <Exo03 compter ={0}/>
 
      {/* <h2>Demo collection</h2> */}
      {/* <PokemonTable pokemons={pokemons}/> */}
