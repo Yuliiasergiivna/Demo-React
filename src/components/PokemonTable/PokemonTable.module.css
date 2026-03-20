@@ -1,0 +1,38 @@
+.table{
+    border-collapse: collapse;
+}
+
+.table > thead{
+    background-color: darkviolet;
+    color:aliceblue
+
+}
+.table>tbody>tr{
+    background-color: snow;
+}
+.table>tbody>tr:nth-child(odd){
+    background-color:indianred;
+}
+.table.tbody>tr>td{
+    height: 4em;
+}
+.table-img{
+    object-fit: fill;
+    height: 100%;
+}
+.table-id{
+    text-shadow: 0.1ch 0.1ch 0.5ch black,
+                0.1ch 0.1ch 0.2ch black,
+                0.1ch 0.1ch 0ch black,
+                -0.1ch 0.1ch 0ch black;
+    font-weight: bold;
+}
+.table-name{
+    font-weight: bold;
+}
+@media(prefers-color-scheme: dark) {
+    .table > thead{
+    background-color: snow;
+    color: darkviolet;
+    }
+}
