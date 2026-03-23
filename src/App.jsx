@@ -7,6 +7,9 @@ import PokemonTable from './components/PokemonTable/PokemonTable'
 import Produits from './components/Exo/Exo02/Produits'
 import produit from './data/produit.json'
 import Exo03 from './components/Exo/Exo03/Exo03'
+import { LoginForm } from './components/Formulaires/LoginForm'
+import { RegisterForm } from './components/Formulaires/RegisterForm'
+import { ExoFormulaire } from './components/Exo/Exo04Formulaire/ExoFormulaire'
 
 function App() {
 
@@ -26,8 +29,16 @@ function App() {
      <h3>Exercice 3</h3>
      <Exo03 compter ={0}/>
 
+     <h3>Exercice 4</h3>
+     <h4>Formulaire</h4>
+     <ExoFormulaire/>
+
      {/* <h2>Demo collection</h2> */}
      {/* <PokemonTable pokemons={pokemons}/> */}
+
+     <h3>Demo Formulaire</h3>
+     <LoginForm/>
+     <RegisterForm/>
     </>
   )
 }
