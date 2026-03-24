@@ -12,18 +12,21 @@ export const ExoFormulaire = ()=>{
 
     const { register, handleSubmit, reset, formState : {errors} } = useForm(
         {mode : 'onChange',
+            resetOptions : { keepFieldsRef : true },
             values : {
                 count : '',
-                tip : '10',
-                people: 1
+                tip : '5',
+                nbPeople: 1
             }
         }
     );
 
     const onSubmit = (data) =>{
-        const note = parseFloat(data.count);
-        const pourcent = parseFloat(data.tip);
-        const personnes = parseInt(data.nbPeople);
+        const note = parseFloat(data.count) || 0;
+        const pourcent = parseFloat(data.tip) || 0;
+        const personnes = parseInt(data.nbPeople) || 1;
+
+        // if(personnes <= 0)return;
 
         const pourboire = note *(pourcent/100);
         const total = note +pourboire;
@@ -52,27 +55,28 @@ export const ExoFormulaire = ()=>{
                         id="count"  
                         type="number" 
                         {...register(
-                            'count', {required : true}
+                            'count', {required : true, min : 1}
                         )}
                         >
                     </input>
-                    {errors.count && <span className={style.errors}>Requis</span>}
+                    {errors?.count?. type === 'required' && <span className={style.errors}>Requis</span>}
                 </div>
 
                 <div className={style['groupe-form']}>
                     <label htmlFor="tip">Pourboire (%)</label>
                     <select id='tip' {...register('tip', {required: true})}>
-                        <option value="5%">5</option>
-                        <option value="10%">10</option>
-                        <option value="15%">15</option>
-                        <option value="20%">20</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
                     </select>
+                        {errors?.count?. type === 'required' && <span className={style.errors}>Requis</span>}
                 </div>
                 <div className={style['groupe-form']}>
                     <label htmlFor="nbPeople">Nombre de personnes :</label>
-                    <input id="nbPeople" type="number" {...register("nbPeople", {required : true, minLength: 1})}>
+                    <input id="nbPeople" type="number" {...register("nbPeople", {required : true, min: 1})}>
                     </input>
-                    {errors.nbPeople && <span className={style.errors}>Minimum 1 personne</span>}
+                    {errors?.nbPeople?.type === 'min' && <span className={style.errors}>Minimum 1 personne</span>}
                 </div>
                 <div className={style.buttons}>
                     <button type="submit">Valider</button>
@@ -80,13 +84,16 @@ export const ExoFormulaire = ()=>{
             </form>
             <div className={style.results}>
                 <div className={style.resultItem}>
-                    <p>Pourboire : {resultats?.pourboire || "0.00"} €</p>
+                    <span>Pourboire : </span>
+                    <span>{resultats?.pourboire || "0.00"} €</span>
                 </div>
                 <div className={style.resultItem}>
-                    <p>Total : {resultats?.total || "0.00"} €</p>
+                    <span>Total : </span>
+                    <span>{resultats?.total || "0.00"} €</span>
                 </div >
                 <div className={style.resultItem}>
-                    <p>Par personne : {resultats?.parPersonne} €</p>
+                    <span>Par personne : </span>
+                    <span>{resultats?.parPersonne || '0.00'} €</span>
                 </div>
                 <div className={style.button}>
                     <button type="button" onClick={onReset}>Réinitialiser</button>

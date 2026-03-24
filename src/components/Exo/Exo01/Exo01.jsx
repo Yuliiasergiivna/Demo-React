@@ -3,6 +3,7 @@ import style from './Exo.module.css'
 export default function Exo01({number}) {
     let message ="";
     let colorClass = "";
+
     if (number === 0) {
       message = <p id="zero">Le nombre {number} est zéro.</p>;
       colorClass = style["zero"];

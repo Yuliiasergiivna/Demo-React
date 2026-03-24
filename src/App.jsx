@@ -18,10 +18,10 @@ function App() {
      <h1>Demo React </h1>
      <Welcome name="Alice"/>
 
-     <h4>Exercice 1</h4>
+     {/* <h4>Exercice 1</h4>
      <Exo01 number={0}/>
      <Exo01 number={42}/>
-     <Exo01 number={17}/>
+     <Exo01 number={17}/> */}
 
      <h4>Exercice 2</h4>
      {<Produits produits={produit}/>}
